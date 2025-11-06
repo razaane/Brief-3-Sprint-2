@@ -8,17 +8,16 @@ const cards = [
 ];
 
 const container = document.getElementById("cardsContainer");
-const cardsPerPage = 6;
+const cardsPerPage = 3; // you can reduce or increase per page
 let currentPage = 1;
 const totalPages = Math.ceil(cards.length / cardsPerPage);
-
 
 let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-
 function renderCards(page) {
     container.innerHTML = "";
+
     const start = (page - 1) * cardsPerPage;
     const end = start + cardsPerPage;
     const pageCards = cards.slice(start, end);
@@ -47,7 +46,7 @@ function renderCards(page) {
             </div>
         `;
 
-        
+        // Favorite button
         const favBtn = cardDiv.querySelector(".fav-btn");
         favBtn.addEventListener("click", () => {
             if (!favorites.some(f => f.id === c.id)) {
@@ -59,7 +58,7 @@ function renderCards(page) {
             }
         });
 
-        
+        // Cart button
         const cartBtn = cardDiv.querySelector(".add-cart-btn");
         cartBtn.addEventListener("click", () => {
             const existing = cart.find(item => item.id === c.id);
@@ -78,7 +77,6 @@ function renderCards(page) {
     updatePagination();
 }
 
-
 const prevBtn = document.getElementById("prevBtn");
 const nextBtn = document.getElementById("nextBtn");
 const pageNumbers = document.getElementById("pageNumbers");
@@ -88,13 +86,19 @@ function updatePagination() {
     for (let i = 1; i <= totalPages; i++) {
         const btn = document.createElement("button");
         btn.textContent = i;
-        if (i === currentPage) btn.classList.add("font-bold", "underline");
+        btn.classList.add("px-3", "py-1", "rounded");
+        if (i === currentPage) btn.classList.add("bg-btn", "font-bold");
+        else btn.classList.add("bg-btn2");
+
         btn.addEventListener("click", () => {
             currentPage = i;
             renderCards(currentPage);
         });
         pageNumbers.appendChild(btn);
     }
+
+    prevBtn.disabled = currentPage === 1;
+    nextBtn.disabled = currentPage === totalPages;
 }
 
 prevBtn.addEventListener("click", () => {
@@ -103,6 +107,7 @@ prevBtn.addEventListener("click", () => {
         renderCards(currentPage);
     }
 });
+
 nextBtn.addEventListener("click", () => {
     if (currentPage < totalPages) {
         currentPage++;
@@ -110,7 +115,5 @@ nextBtn.addEventListener("click", () => {
     }
 });
 
-
+// Initial render
 renderCards(currentPage);
-
-

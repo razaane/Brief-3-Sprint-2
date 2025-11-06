@@ -239,5 +239,3 @@ cardsAfficher(0);
 
 
 
-
-

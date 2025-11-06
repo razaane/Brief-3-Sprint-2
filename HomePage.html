@@ -76,9 +76,9 @@
             </div>
             <div class=" flex justify-around mt-10">
                 <div class="bg-cards content-center rounded-lg w-[44vw] h-[30vh] ">
-                    <i class="fa-solid fa-store ml-6"></i>
+                    <i class="text-btn fa-solid fa-store ml-6"></i>
                     <div class="ml-6">
-                        <h5 class="font-display mt-2">
+                        <h5 class="font-display font-bold mt-2">
                             Découvrir le jeu
                         </h5>
                         <p class="font-tet mt-2 text-tete text-xs">
@@ -91,9 +91,9 @@
                 </div>
                 <div>
                     <div class="bg-cards rounded-lg content-center w-[44vw] h-[30vh] ">
-                    <i class="fa-solid fa-store ml-6"></i>
+                    <i class=" text-btn fa-solid fa-store ml-6"></i>
                     <div class="ml-6  ">
-                        <h5 class="font-display mt-2">
+                        <h5 class="font-display font-bold mt-2">
                             Accéder au Marché
                         </h5>
                         <p class="font-tet mt-2 text-tete text-xs">
@@ -139,7 +139,7 @@
                 Terms of service
             </p>
         </div>
-        <div class="flex justify-center items-center gap-4 mL-4 mb-4 text-2xl">
+        <div class="flex content-center items-center gap-4 mb-4 text-2xl">
            <i class="fa-brands fa-github"></i>
             <i class="fa-solid fa-envelope"></i>
             <i class="fa-brands fa-instagram"></i>
@@ -153,6 +153,60 @@
 
 
     </main>
+    <script>
+    const cards = [
+        // Copy the full cards array from script.js here or import it
+        // For brevity, assuming it's available; in production, load from script.js
+    ];
+    const sliderContainer = document.getElementById('sliderContainer');
+    const prevSlider = document.getElementById('prevSlider');
+    const nextSlider = document.getElementById('nextSlider');
+    let sliderIndex = 0;
+    const cardsPerSlide = 3;
+
+    function renderSlider() {
+        sliderContainer.innerHTML = '';
+        for (let i = sliderIndex; i < sliderIndex + cardsPerSlide && i < cards.length; i++) {
+            sliderContainer.innerHTML += `
+                <div class="flex-shrink-0 w-1/3 p-4">
+                    <img src="${cards[i].img}" alt="cardPic" class="w-full">
+                    <div class="bg-cards p-4 text-white text-center">
+                        <h3 class="font-display">${cards[i].name}</h3>
+                        <p class="font-tet text-tete">${cards[i].description}</p>
+                        <p>${cards[i].price} €</p>
+                    </div>
+                </div>
+            `;
+        }
+        sliderContainer.style.transform = translateX(0);
+    }
+
+    nextSlider.addEventListener('click', () => {
+        if (sliderIndex + cardsPerSlide < cards.length) {
+            sliderIndex += cardsPerSlide;
+            renderSlider();
+        }
+    });
+
+    prevSlider.addEventListener('click', () => {
+        if (sliderIndex > 0) {
+            sliderIndex -= cardsPerSlide;
+            renderSlider();
+        }
+    });
+
+    // Auto-slide every 5 seconds
+    setInterval(() => {
+        if (sliderIndex + cardsPerSlide < cards.length) {
+            sliderIndex += cardsPerSlide;
+        } else {
+            sliderIndex = 0;
+        }
+        renderSlider();
+    }, 5000);
+
+    renderSlider();
+</script>
 
     <script src="/script.js"></script>
 </body>

@@ -1,69 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>DigitalRami</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
     <script id="tailwind-config">
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        "backroung":"#32194A",
-                        "cards":"#1A0B2E",
-                        "text":"#FFFFFF",
-                        "btn":"#7B2CBF",
-                        "btn2":"#4D4F50",
-                        "tete":"#90B2CB",
-                        "commun":"#1E293B",
-                        "rare":"#1E3A8A",
-                        "legendary":"#78350F",
-                        "epic":"#581C87",
-                        "commun-logo":"#CBD5E1",
-                        "rare-logo":"#60A5FA",
-                        "legendary-logo":"#FBBF24",
-                        "epic-logo":"#C084FC",
-                        "commun-border":"#475569",
-                        "rare-border":"#60A5FA",
-                        "legendary-border":"",
-                        "epic-border":"#F59E0B",
-                        "commun-round":"#334155",
-                        "rare-round":"#3B82F6",
-                        "legendary-round":"#F59E0B",
-                        "epic-round":"#FBBF24",
+                        "backroung": "#32194A",
+                        "cards": "#1A0B2E",
+                        "text": "#FFFFFF",
+                        "btn": "#7B2CBF",
+                        "btn2": "#4D4F50",
+                        "tete": "#90B2CB",
+                        "commun": "#1E293B",
+                        "rare": "#1E3A8A",
+                        "legendary": "#78350F",
+                        "epic": "#581C87",
+                        "commun-logo": "#CBD5E1",
+                        "rare-logo": "#60A5FA",
+                        "legendary-logo": "#FBBF24",
+                        "epic-logo": "#C084FC",
+                        "commun-border": "#475569",
+                        "rare-border": "#60A5FA",
+                        "legendary-border": "",
+                        "epic-border": "#F59E0B",
+                        "commun-round": "#334155",
+                        "rare-round": "#3B82F6",
+                        "legendary-round": "#F59E0B",
+                        "epic-round": "#FBBF24",
 
 
                     },
                     fontFamily: {
-                        
+
                         "display": ["Orbitron"],
-                        "tet":["Space Grotesk"]
+                        "tet": ["Space Grotesk"]
                     },
                 },
             },
         }
     </script>
 </head>
-<body  class="bg-backroung text-white font-[display]">
+
+<body class="bg-backroung text-white font-[display]">
     <header class="flex items-center bg-cards gap-10 h-20 ">
-        <div  href="HomePage.html" class="text-xl w-[20%] font-bold font-display tracking-normal ml-8">
-                DIGITALRAMI
-            </div>
+        <div class="text-xl w-[20%] font-bold font-display tracking-normal ml-8" id="home-logo">
+            <a href="HomePage.html">DIGITALRAMI</a>
+        </div>
         <nav class="flex items-center gap-8 w-[80%]">
             <div class=" w-[80%] ">
                 <ul class="flex w-full justify-center gap-10 ">
                     <li><a href="MarketPage.html" class="text-white font-display hover:text-gray-400">Market</a></li>
                     <li><a href="GuidePage.html" class="text-white font-display hover:text-gray-400">Guide</a></li>
-                    <li><a href="CollectionPage.html" class="text-white font-display hover:text-gray-400">Collection</a></li>
+                    <li><a href="CollectionPage.html" class="text-white font-display hover:text-gray-400">Collection</a>
+                    </li>
                     <li><a href="PanierPage.html" class="text-white font-display hover:text-gray-400">Panier</a></li>
-                    <li><a href="FavoritesPage.html" class="text-white font-display hover:text-gray-400">Favorites</a></li>
+                    <li><a href="FavoritesPage.html" class="text-white font-display hover:text-gray-400">Favorites</a>
+                    </li>
                 </ul>
             </div>
-            <div  class="flex gap-4 ">
+            <div class="flex gap-4 ">
                 <button class="bg-btn hover:bg-purple-400 px-2 py-2 rounded-lg font-display">
                     Sign Up
                 </button>
@@ -74,117 +82,119 @@
         </nav>
     </header>
 
-    <section >
-        <img src="./images/Background guide.png" class="w-full  mt-10">
-            <div class="absolute inset-0 flex flex-col items-center content-center  justify-center text-white text-center mt-40 ">
-                <h1 class="text-4xl font-bold font-display ">How TO Play</h1>
-                <p class="font-tet text-tete">Master the rules and dominate the game. Learn everything you need to <br>know to start your journey.</p>
-                <button class="bg-btn font-display px-6 py-3 rounded-lg hover:bg-purple-400 mt-10">
-                   Play Now
-                </button>
-            </div>
-            <h1 class="font-display font-bold text-center text-2xl mt-14">
-                    Core Game Concepts
-                </h1>
-            <div class="flex gap-10 justify-center mt-8">
-                <div class="bg-cards w-[20vw] h-[18vh] content-center rounded-lg">
-                    <i class="fa-solid fa-medal ml-6 text-btn text-2xl  ml-6 mb-4"></i>
-                    <div class="ml-6">
-                        <h6 class="font-bold font-display ">
-                            Turn Structre 
-                        </h6>
-                        <p class="font-tet text-tete">
-                            Learn the step-by-step sequence of <br>actions you can take on your turn.
-                        </p>
-                    </div>
-                </div>
-                <div class="bg-cards w-[20vw] h-[18vh] content-center rounded-lg">
-                    <i class=" text-btn fa-solid fa-bolt text-2xl  ml-6 mb-4"></i>
-                    <div class="ml-6">
-                        <h6 class="font-bold font-display ">
-                            Main Stystem
-                        </h6>
-                        <p class="font-tet text-tete">
-                            Master the resources requiered to play <br>your most powerful cards.
-                        </p>
-                    </div>
-                </div>
-                <div class="bg-cards w-[20vw] h-[18vh] content-center rounded-lg">
-                    <i class="fa-solid fa-spinner text-btn ml-6 text-2xl  ml-6 mb-4"></i>
-                    <div class="ml-6">
-                        <h6 class="font-bold font-display ">
-                            Game Objective 
-                        </h6>
-                        <p class="font-tet text-tete">  
-                            Understand the primary goal to <br>achieve victory against your<br>opponents.
-                        </p>
-                    </div>
+    <section>
+        <img src="images/GD.png" class="w-full  mt-10">
+        <div
+            class="absolute inset-0 flex flex-col items-center content-center  justify-center text-white text-center mt-40 ">
+            <h1 class="text-4xl font-bold font-display ">How TO Play</h1>
+            <p class="font-tet text-tete">Master the rules and dominate the game. Learn everything you need to <br>know
+                to start your journey.</p>
+            <button class="bg-btn font-display px-6 py-3 rounded-lg hover:bg-purple-400 mt-10">
+                Play Now
+            </button>
+        </div>
+        <h1 class="font-display font-bold text-center text-2xl mt-14">
+            Core Game Concepts
+        </h1>
+        <div class="flex gap-10 justify-center mt-8">
+            <div class="bg-cards w-[20vw] h-[18vh] content-center rounded-lg">
+                <i class="fa-solid fa-medal ml-6 text-btn text-2xl  ml-6 mb-4"></i>
+                <div class="ml-6">
+                    <h6 class="font-bold font-display ">
+                        Turn Structre
+                    </h6>
+                    <p class="font-tet text-tete">
+                        Learn the step-by-step sequence of <br>actions you can take on your turn.
+                    </p>
                 </div>
             </div>
+            <div class="bg-cards w-[20vw] h-[18vh] content-center rounded-lg">
+                <i class=" text-btn fa-solid fa-bolt text-2xl  ml-6 mb-4"></i>
+                <div class="ml-6">
+                    <h6 class="font-bold font-display ">
+                        Main Stystem
+                    </h6>
+                    <p class="font-tet text-tete">
+                        Master the resources requiered to play <br>your most powerful cards.
+                    </p>
+                </div>
+            </div>
+            <div class="bg-cards w-[20vw] h-[18vh] content-center rounded-lg">
+                <i class="fa-solid fa-spinner text-btn ml-6 text-2xl  ml-6 mb-4"></i>
+                <div class="ml-6">
+                    <h6 class="font-bold font-display ">
+                        Game Objective
+                    </h6>
+                    <p class="font-tet text-tete">
+                        Understand the primary goal to <br>achieve victory against your<br>opponents.
+                    </p>
+                </div>
+            </div>
+        </div>
     </section>
     <section class="mt-14">
         <h1 class="font-display font-bold text-center text-2xl mt-8">
-            Cards Rarity Levels 
+            Cards Rarity Levels
         </h1>
         <div class="flex gap-40 justify-center mt-10">
-                <div class="bg-commun w-[12vw] h-[25vh] rounded-xl content-center">   
-                    <i class="fa-regular fa-bookmark ml-24 text-3xl text-commun-logo mb-4 "></i>
-                    <div class="">
-                        <h6 class="font-bold font-display text-center">
-                            Commune
-                        </h6>
-                        <p class="font-tet text-tete text-center">
-                            Core crds for your<br>collection,forming the <br>backbone of any deck.
-                        </p>
-                    </div>
+            <div class="bg-commun w-[12vw] h-[25vh] rounded-xl content-center">
+                <i class="fa-regular fa-bookmark ml-24 text-3xl text-commun-logo mb-4 "></i>
+                <div class="">
+                    <h6 class="font-bold font-display text-center">
+                        Commune
+                    </h6>
+                    <p class="font-tet text-tete text-center">
+                        Core crds for your<br>collection,forming the <br>backbone of any deck.
+                    </p>
                 </div>
-                <div class="bg-rare w-[12vw] h-[25vh] rounded-lg content-center">  
-                    <i class="fa-solid fa-shield-halved ml-24 text-3xl text-rare-logo mb-4 "></i>
-                    <div class="">
-                        <h6 class="font-bold font-display text-center">
-                            Rare
-                        </h6>
-                        <p class="font-tet text-tete text-center">
-                            Powerful cards with<br>unique abilities that can <br>turn the tide of battle.
-                        </p>
-                    </div>
+            </div>
+            <div class="bg-rare w-[12vw] h-[25vh] rounded-lg content-center">
+                <i class="fa-solid fa-shield-halved ml-24 text-3xl text-rare-logo mb-4 "></i>
+                <div class="">
+                    <h6 class="font-bold font-display text-center">
+                        Rare
+                    </h6>
+                    <p class="font-tet text-tete text-center">
+                        Powerful cards with<br>unique abilities that can <br>turn the tide of battle.
+                    </p>
                 </div>
-                <div class="bg-epic w-[12vw] h-[25vh] rounded-lg content-center">  
-                    <i class="fa-solid fa-shield-halved ml-24 text-3xl text-epic-logo mb-4 "></i>
-                    <div class="">
-                        <h6 class="font-bold font-display text-center">
-                            Epique 
-                        </h6>
-                        <p class="font-tet text-tete text-center">
-                            Game-changing cards<br>with copmlex<br>machanics for stategic <br>plays.
-                        </p>
-                    </div>
+            </div>
+            <div class="bg-epic w-[12vw] h-[25vh] rounded-lg content-center">
+                <i class="fa-solid fa-shield-halved ml-24 text-3xl text-epic-logo mb-4 "></i>
+                <div class="">
+                    <h6 class="font-bold font-display text-center">
+                        Epique
+                    </h6>
+                    <p class="font-tet text-tete text-center">
+                        Game-changing cards<br>with copmlex<br>machanics for stategic <br>plays.
+                    </p>
                 </div>
-                <div class="bg-legendary w-[12vw] h-[25vh] rounded-lg content-center">  
-                    <i class="fa-regular fa-gem ml-24 text-3xl text-legendary-logo mb-4"></i>
-                    <div class="">
-                        <h6 class="font-bold font-display text-center">
-                            Legendaire
-                        </h6>
-                        <p class="font-tet text-tete text-center">
-                            The most coverted<br>cards,possessing <br>unparalleled power and <br>influence .
-                        </p>
-                    </div>
+            </div>
+            <div class="bg-legendary w-[12vw] h-[25vh] rounded-lg content-center">
+                <i class="fa-regular fa-gem ml-24 text-3xl text-legendary-logo mb-4"></i>
+                <div class="">
+                    <h6 class="font-bold font-display text-center">
+                        Legendaire
+                    </h6>
+                    <p class="font-tet text-tete text-center">
+                        The most coverted<br>cards,possessing <br>unparalleled power and <br>influence .
+                    </p>
                 </div>
+            </div>
     </section>
     <section class="mt-14">
-                <div>
-                    <h1 class="text-2xl text-center font-display font-bold">
-                        Frequently Asked Questions
-                    </h1>
-                    
-                </div>
+        <div>
+            <h1 class="text-2xl text-center font-display font-bold">
+                Frequently Asked Questions
+            </h1>
+
+        </div>
     </section>
 
     <footer class="flex  items-center gap-[140px] h-[25vh] bg-cards ">
         <div class="flex text-xs font-display gap-6 ml-8">
             <p>
-                Terms  of service 
+                Terms of service
             </p>
             <p>
                 Terms of service
@@ -194,7 +204,7 @@
             </p>
         </div>
         <div class="flex justify-center items-center gap-4 mL-4 mb-4 text-2xl">
-           <i class="fa-brands fa-github"></i>
+            <i class="fa-brands fa-github"></i>
             <i class="fa-solid fa-envelope"></i>
             <i class="fa-brands fa-instagram"></i>
             <i class="fa-brands fa-x-twitter"></i>
@@ -210,4 +220,5 @@
 
     <script src="/script.js"></script>
 </body>
+
 </html>

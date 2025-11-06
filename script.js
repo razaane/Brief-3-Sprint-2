@@ -1,189 +1,72 @@
 
-const cards = [
-    {
-        id: 1,
-        name: "Sentinelle Cybernétique",
-        description: "Une défenseuse avec le feux de tech. ",
-        img: "./images/card11.png",
-        price: 25.50 ,
-        rarety: "épic",
 
-    },
-    {
-        id: 2,
-        name: "Void Witch",
-        description: "Une créature de pure énergie.",
-        img: "./images/card2.png",
-        price: 25.50 ,
-        rarety: "Commun",
 
-    },
-    {
-        id: 3,
-        name: "Spectre de Néon",
-        description: "Une entitée insaisissable quihante le réseau.",
-        img: "./images/card3.png",
-        price:  25.50 ,
-        rarety: "Lengendary",
 
-    },
-    {
-        id: 4,
-        name: "Chimère des Étoiles",
-        description: "Une fusion de bêtes imprévisible.",
-        img: "./images/card4.png",
-        price:  25.50 ,
-        rarety: "Rare",
+const slider = document.getElementById("slider");
+const slides = Array.from(slider.children);
+const slideCount = slides.length;
 
-    },
-    {
-        id: 5,
-        name: "Phénix Binaire",
-        description: "Renaissant de ses cendres numériques à chaque défaite.",
-        img: "./images/card5.png",
-        price:  25.50 ,
-        rarety: "épic",
-
-    },
-    {
-        id: 6,
-        name: "Golem de Quantum",
-        description: "Un colosse instable,capable de manipuler la réalité.",
-        img: "./images/card6.png",
-        price:  25.50 ,
-        rarety: "Lengendary",
-
-    },
-    {
-        id: 7,
-        name: "Sentinelle Cybernétique",
-        description: "Une défenseuse avec le feux de tech. ",
-        img: "./images/card11.png",
-        price:  25.50 ,
-        rarety: "épic",
-
-    },
-    {
-        id: 8,
-        name: "Void Witch",
-        description: "Une créature de pure énergie.",
-        img: "./images/card2.png",
-        price:  25.50 ,
-        rarety: "Commun",
-
-    },
-    {
-        id: 9,
-        name: "Spectre de Néon",
-        description: "Une entitée insaisissable quihante le réseau.",
-        img: "./images/card3.png",
-        price:  25.50 ,
-        rarety: "Lengendary",
-
-    },
-    {
-        id: 10,
-        name: "Chimère des Étoiles",
-        description: "Une fusion de bêtes imprévisible.",
-        img: "./images/card4.png",
-        price:  25.50 ,
-        rarety: "Rare",
-
-    },
-    {
-        id: 11,
-        name: "Phénix Binaire",
-        description: "Renaissant de ses cendres numériques à chaque défaite.",
-        img: "./images/card5.png",
-        price:  25.50 ,
-        rarety: "épic",
-
-    },
-    {
-        id: 12,
-        name: "Golem de Quantum",
-        description: "Un colosse instable,capable de manipuler la réalité.",
-        img: "./images/card6.png",
-        price:  25.50 ,
-        rarety: "Lengendary",
-
-    },
-    {
-        id: 13,
-        name: "Sentinelle Cybernétique",
-        description: "Une défenseuse avec le feux de tech. ",
-        img: "./images/card11.png",
-        price:  25.50 ,
-        rarety: "épic",
-
-    },
-    {
-        id: 14,
-        name: "Void Witch",
-        description: "Une créature de pure énergie.",
-        img: "./images/card2.png",
-        price:  25.50 ,
-        rarety: "Commun",
-
-    },
-    {
-        id: 15,
-        name: "Spectre de Néon",
-        description: "Une entitée insaisissable quihante le réseau.",
-        img: "./images/card3.png",
-        price:  25.50 ,
-        rarety: "Lengendary",
-
-    },
-    {
-        id: 16,
-        name: "Chimère des Étoiles",
-        description: "Une fusion de bêtes imprévisible..",
-        img: "./images/card4.png",
-        price:  25.50 ,
-        rarety: "Rare",
-
-    },
-    {
-        id: 17,
-        name: "Phénix Binaire",
-        description: "Renaissant de ses cendres numériques à chaque défaite.",
-        img: "./images/card5.png",
-        price:  25.50 ,
-        rarety: "épic",
-
-    },
-    {
-        id: 18,
-        name: "Golem de Quantum",
-        description: "Un colosse instable,capable de manipuler la réalité.",
-        img: "./images/card6.png",
-        price:  25.50 ,
-        rarety: "Lengendary",
-
-    },
-
-]
-
-const container = document.getElementById("cardsContainer")
+// Clone slides to make infinite effect
+slides.forEach(slide => {
+    const clone = slide.cloneNode(true);
+    slider.appendChild(clone);
+});
 
 let currentIndex = 0;
-const cardsPerPage = 6;
+const slideWidth = slides[0].offsetWidth + 40; // image width + gap-10 ~ 40px
+const speed = 2; // pixels per frame
 
-// --- AFFICHAGE CARDS ---
-function cardsAfficher(index) {
+function animateSlider() {
+    currentIndex += speed;
+
+    if (currentIndex >= slideWidth * slideCount) {
+        currentIndex = 0; // loop back
+    }
+
+    slider.style.transform = `translateX(-${currentIndex}px)`;
+    requestAnimationFrame(animateSlider);
+}
+
+animateSlider();
+
+// Optional: make it responsive
+window.addEventListener("resize", () => {
+    // recalc slide width
+    const newWidth = slides[0].offsetWidth + 40;
+    currentIndex = 0;
+    slider.style.transform = `translateX(0px)`;
+});
+
+
+// --- DOM elements ---
+const container = document.getElementById("cardsContainer");
+const prevBtn = document.getElementById("prevBtn");
+const nextBtn = document.getElementById("nextBtn");
+const pageNumbersDiv = document.getElementById("pageNumbers");
+
+// --- Variables ---
+const cardsPerPage = 6;
+let currentPage = 1;
+const totalPages = Math.ceil(cards.length / cardsPerPage);
+
+// --- Display cards for a given page ---
+function displayCards(page) {
     container.innerHTML = "";
-    for (let i = index; i < index + cardsPerPage && i < cards.length; i++) {
+    const start = (page - 1) * cardsPerPage;
+    const end = start + cardsPerPage;
+    const cardsToShow = cards.slice(start, end);
+
+    cardsToShow.forEach(card => {
         container.innerHTML += `
             <div class="text-center">
-                <img src="${cards[i].img}" alt="cardPic" class="w-[20vw]">
-                <div class="grid grid-rows-4 bg-cards font-tet p-[8px] text-white text-left h-80 border-l-2 border-r-2 border-b-2 border-[#7B2CBF]">
-                    <h3 class="text-[25px]">${cards[i].name}</h3>
-                    <div class="flex flex-col gap-[20px] h-[60px]">
-                        <p class="w-[80%] font-display">${cards[i].description}</p>
+                <img src="${card.img}" alt="${card.name}" class="w-[20vw] mx-auto">
+                <div class="grid grid-rows-4 bg-cards font-tet p-2 text-white text-left h-80 border-l-2 border-r-2 border-b-2 border-[#7B2CBF]">
+                    <h3 class="text-[25px]">${card.name}</h3>
+                    <div class="flex flex-col gap-2 h-[60px]">
+                        <p class="w-[90%] font-display">${card.description}</p>
                         <span>1/100</span>
                     </div>
-                    <p class="flex items-end pb-[10px]">${cards[i].price} €</p>
+                    <p class="flex items-end pb-2">${card.price} €</p>
                     <div class="flex justify-between h-[50px]">
                         <button class="bg-btn hover:bg-purple-500 px-2 py-1 rounded-lg font-tet">
                             Ajouter au panier
@@ -195,47 +78,50 @@ function cardsAfficher(index) {
                 </div>
             </div>
         `;
-    }
+    });
 
-    updateActiveButton();
+    updatePaginationButtons();
 }
 
-const prevBtn = document.getElementById("prevBtn");
-const nextBtn = document.getElementById("nextBtn");
-// --- PAGINATION BUTTONS ---
-const pageButtons = document.querySelectorAll(".page-btn");
+// --- Update pagination buttons ---
+function updatePaginationButtons() {
+    // Clear page numbers
+    pageNumbersDiv.innerHTML = "";
 
-pageButtons.forEach((btn, index) => {
-    btn.addEventListener("click", () => {
-        currentIndex = index * cardsPerPage;
-        cardsAfficher(currentIndex);
-    });
-});
-nextBtn.addEventListener("click", () => {
-    if (currentIndex + cardsPerPage < cards.length) {
-        currentIndex += cardsPerPage;
-        cardsAfficher(currentIndex);
+    // Add page number buttons
+    for (let i = 1; i <= totalPages; i++) {
+        const btn = document.createElement("button");
+        btn.textContent = i;
+        btn.className = `px-3 py-1 rounded ${i === currentPage ? "bg-btn" : "bg-btn2"}`;
+        btn.addEventListener("click", () => {
+            currentPage = i;
+            displayCards(currentPage);
+        });
+        pageNumbersDiv.appendChild(btn);
     }
-});
+
+    // Disable prev/next buttons if at start/end
+    prevBtn.disabled = currentPage === 1;
+    nextBtn.disabled = currentPage === totalPages;
+}
+
+// --- Event listeners ---
 prevBtn.addEventListener("click", () => {
-    if (currentIndex - cardsPerPage >= 0) {
-        currentIndex -= cardsPerPage;
-        cardsAfficher(currentIndex);
+    if (currentPage > 1) {
+        currentPage--;
+        displayCards(currentPage);
     }
 });
-function updateActiveButton() {
-    pageButtons.forEach(btn => {
-        btn.classList.remove("bg-purple-600");
-        btn.classList.add("bg-btn");
-    });
 
-    const activePage = Math.floor(currentIndex / cardsPerPage);
-    pageButtons[activePage].classList.remove("bg-btn");
-    pageButtons[activePage].classList.add("bg-purple-600");
-}
+nextBtn.addEventListener("click", () => {
+    if (currentPage < totalPages) {
+        currentPage++;
+        displayCards(currentPage);
+    }
+});
 
-cardsAfficher(0);
-
+// --- Initial display ---
+displayCards(currentPage);
 
 
 

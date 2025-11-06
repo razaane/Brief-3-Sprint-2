@@ -1,51 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>DigitalRami</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
     <script id="tailwind-config">
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        "backroung":"#32194A",
-                        "cards":"#1A0B2E",
-                        "text":"#FFFFFF",
-                        "btn":"#7B2CBF",
-                        "btn2":"#4D4F50",
-                        "tete":"#90B2CB"
+                        "backroung": "#32194A",
+                        "cards": "#1A0B2E",
+                        "text": "#FFFFFF",
+                        "btn": "#7B2CBF",
+                        "btn2": "#4D4F50",
+                        "tete": "#90B2CB"
                     },
                     fontFamily: {
-                        
+
                         "display": ["Orbitron"],
-                        "tet":["Space Grotesk"]
+                        "tet": ["Space Grotesk"]
                     },
                 },
             },
         }
     </script>
 </head>
-<body  class="bg-backroung text-white font-[display]">
+
+<body class="bg-backroung text-white font-[display]">
     <header class="flex items-center bg-cards gap-10 h-20 ">
-        <div  href="HomePage.html" class="text-xl w-[20%] font-bold font-display tracking-normal ml-8">
-                DIGITALRAMI
-            </div>
+        <div class="text-xl w-[20%] font-bold font-display tracking-normal ml-8" id="home-logo">
+            <a href="HomePage.html">DIGITALRAMI</a>
+        </div>
         <nav class="flex items-center gap-8 w-[80%]">
             <div class=" w-[80%] ">
                 <ul class="flex w-full justify-center gap-10 ">
                     <li><a href="MarketPage.html" class="text-white font-display hover:text-gray-400">Market</a></li>
                     <li><a href="GuidePage.html" class="text-white font-display hover:text-gray-400">Guide</a></li>
-                    <li><a href="CollectionPage.html" class="text-white font-display hover:text-gray-400">Collection</a></li>
+                    <li><a href="CollectionPage.html" class="text-white font-display hover:text-gray-400">Collection</a>
+                    </li>
                     <li><a href="PanierPage.html" class="text-white font-display hover:text-gray-400">Panier</a></li>
-                    <li><a href="FavoritesPage.html" class="text-white font-display hover:text-gray-400">Favorites</a></li>
+                    <li><a href="FavoritesPage.html" class="text-white font-display hover:text-gray-400">Favorites</a>
+                    </li>
                 </ul>
             </div>
-            <div  class="flex gap-4 ">
+            <div class="flex gap-4 ">
                 <button class="bg-btn hover:bg-purple-400 px-2 py-2 rounded-lg font-display">
                     Sign Up
                 </button>
@@ -62,7 +70,7 @@
         </p>
         <section class="mt-8 ml-60 mr-60">
             <div id="cardsContainer" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-     
+
             </div>
         </section>
         <div id="pagination" class="flex justify-center gap-4 mt-8">
@@ -70,41 +78,42 @@
                 &lt;
             </button>
             <div id="pageNumbers" class="flex gap-3 text-white font-semibold">
-                <button >1</button>
-                <button >2</button>
-                <button >3</button>
+                <button>1</button>
+                <button>2</button>
+                <button>3</button>
             </div>
             <button id="nextBtn" class=" text-white text-[22px]">
                 &gt;
             </button>
         </div>
-    <footer class="flex  items-center gap-[140px] h-[25vh] bg-cards ">
-        <div class="flex text-xs font-display gap-6 ml-8">
-            <p>
-                Terms  of service 
-            </p>
-            <p>
-                Terms of service
-            </p>
-            <p>
-                Terms of service
-            </p>
-        </div>
-        <div class="flex justify-center items-center gap-4 mL-4 mb-4 text-2xl">
-           <i class="fa-brands fa-github"></i>
-            <i class="fa-solid fa-envelope"></i>
-            <i class="fa-brands fa-instagram"></i>
-            <i class="fa-brands fa-x-twitter"></i>
-        </div>
-        <div class="flex items-center justify-end gap-3">
-            <input type="text" placeholder="Contant Us" class="rounded-lg">
-            <button class="bg-btn hover:bg-purple-400 page-btn h-10 w-10 rounded-lg">Send</button>
-        </div>
-    </footer>
+        <footer class="flex  items-center gap-[140px] h-[25vh] bg-cards ">
+            <div class="flex text-xs font-display gap-6 ml-8">
+                <p>
+                    Terms of service
+                </p>
+                <p>
+                    Terms of service
+                </p>
+                <p>
+                    Terms of service
+                </p>
+            </div>
+            <div class="flex justify-center items-center gap-4 mL-4 mb-4 text-2xl">
+                <i class="fa-brands fa-github"></i>
+                <i class="fa-solid fa-envelope"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-x-twitter"></i>
+            </div>
+            <div class="flex items-center justify-end gap-3">
+                <input type="text" placeholder="Contant Us" class="rounded-lg">
+                <button class="bg-btn hover:bg-purple-400 page-btn h-10 w-10 rounded-lg">Send</button>
+            </div>
+        </footer>
 
 
     </main>
 
-    <script src="/script.js"></script>
+    <script src="scriptmarket.js"></script>
 </body>
+
 </html>

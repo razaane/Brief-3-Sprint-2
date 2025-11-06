@@ -11,20 +11,21 @@ function renderFavorites() {
 
     favorites.forEach(card => {
         const div = document.createElement("div");
-        div.classList.add("text-center", "bg-cards", "p-4", "rounded-lg");
+        div.classList.add("text-center", "bg-cards", "p-4", "rounded-lg", "flex", "flex-col", "items-center");
 
         div.innerHTML = `
-            <img src="${card.img}" alt="${card.name}" class="w-full h-48 object-cover mb-2">
+            <img src="${card.img}" alt="${card.name}" class="w-full max-w-[200px] h-48 object-cover mb-2">
             <h3 class="text-lg font-display font-bold mb-1">${card.name}</h3>
-            <p class="mb-2 font-tet ">${card.price} €</p>
-            <button class="bg-red-600 hover:bg-red-500 px-3 py-1 rounded" data-id="${card.id}">
+            <p class="mb-2 font-tet">${card.price} €</p>
+            <button class="delete-btn bg-red-600 hover:bg-red-500 px-3 py-1 rounded" data-id="${card.id}">
                 Supprimer
             </button>
         `;
+
         container.appendChild(div);
     });
 
-    container.querySelectorAll("button").forEach(btn => {
+    container.querySelectorAll(".delete-btn").forEach(btn => {
         btn.addEventListener("click", () => {
             const id = parseInt(btn.dataset.id);
             favorites = favorites.filter(c => c.id !== id);
@@ -33,6 +34,5 @@ function renderFavorites() {
         });
     });
 }
-
 
 renderFavorites();

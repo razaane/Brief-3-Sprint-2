@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>DigitalRami</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script id="tailwind-config">
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        "backroung":"#32194A",
+                        "cards":"#1A0B2E",
+                        "text":"#FFFFFF",
+                        "btn":"#7B2CBF",
+                        "btn2":"#4D4F50",
+                        "tete":"#90B2CB"
+                    },
+                    fontFamily: {
+                        
+                        "display": ["Orbitron"],
+                        "tet":["Space Grotesk"]
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body  class="bg-backroung text-white font-[display]">
+    <header class="flex items-center bg-cards gap-10 h-20 ">
+        <div  href="HomePage.html" class="text-xl w-[20%] font-bold font-display tracking-normal ml-8">
+                DIGITALRAMI
+            </div>
+        <nav class="flex items-center gap-8 w-[80%]">
+            <div class=" w-[80%] ">
+                <ul class="flex w-full justify-center gap-10 ">
+                    <li><a href="MarketPage.html" class="text-white font-display hover:text-gray-400">Market</a></li>
+                    <li><a href="GuidePage.html" class="text-white font-display hover:text-gray-400">Guide</a></li>
+                    <li><a href="CollectionPage.html" class="text-white font-display hover:text-gray-400">Collection</a></li>
+                    <li><a href="PanierPage.html" class="text-white font-display hover:text-gray-400">Panier</a></li>
+                    <li><a href="FavoritesPage.html" class="text-white font-display hover:text-gray-400">Favorites</a></li>
+                </ul>
+            </div>
+            <div  class="flex gap-4 ">
+                <button class="bg-btn hover:bg-purple-400 px-2 py-2 rounded-lg font-display">
+                    Sign Up
+                </button>
+                <button class="bg-btn2 hover:bg-gray-500 px-1 py-1  rounded-lg font-display">
+                    Login
+                </button>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <img src="./images/Background (3).png" class="w-full  mt-10">
+            <div class="absolute inset-0 flex flex-col items-center content-center  justify-center text-white text-center mt-40 ">
+                <h1 class="text-4xl font-bold font-display ">Forge Your Legacy in the Digital Arena</h1>
+                <p class="font-tet text-tete">Collect, trade, and battle with unique cards in an ever-expanding universe.</p>
+                <button class="bg-btn font-display px-6 py-3 rounded-lg hover:bg-purple-400 mt-10">
+                   Commencer votre collection 
+                </button>
+            </div>
+        
+            <div class="">
+                <h1 class="font-display font-bold  mt-10 text-center text-4xl">
+                    Your Adventure Awaits 
+                </h1>
+                <p class="font-tet text-tete text-center mt-4">
+                    Whether you're a strategist eager to learn or a collector ready to trade, your journey begins <br>here.
+                </p>
+            </div>
+            <div class=" flex justify-around mt-10">
+                <div class="bg-cards content-center rounded-lg w-[44vw] h-[30vh] ">
+                    <i class="fa-solid fa-store ml-6"></i>
+                    <div class="ml-6">
+                        <h5 class="font-display mt-2">
+                            Découvrir le jeu
+                        </h5>
+                        <p class="font-tet mt-2 text-tete text-xs">
+                            Plongez dans les règles,l'univers et les stratégies pour devenir un maitre du jeu.
+                        </p>
+                        <button class=" px-2 py-2 mt-2 bg-btn font-display hover:bg-purple-400 text-white rounded-lg ">
+                            Voir le Guide ->
+                        </button>
+                    </div>
+                </div>
+                <div>
+                    <div class="bg-cards rounded-lg content-center w-[44vw] h-[30vh] ">
+                    <i class="fa-solid fa-store ml-6"></i>
+                    <div class="ml-6  ">
+                        <h5 class="font-display mt-2">
+                            Accéder au Marché
+                        </h5>
+                        <p class="font-tet mt-2 text-tete text-xs">
+                           Achetez, vendez et échangez des cartes rares avec d'autres collectionneurs.
+                        </p>
+                        <button class="bg-btn mt-2 px-2 py-2 font-display hover:bg-purple-400 text-white rounded-lg ">
+                            Aller au Marché ->
+                        </button>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+        <section>
+                <h1 class="font-display font-bold text-center text-4xl mt-20 ">
+                    Explore the Collection
+                </h1>
+                <div class="relative w-full mt-6 overflow-hidden">
+                    
+                    <div id="slider" class="flex gap-10">
+                        <img src="./images/slider1.png" class="flex-shrink-0">
+                        <img src="./images/slider2.png" class="flex-shrink-0">
+                        <img src="./images/slider3.png" class=" flex-shrink-0">
+                        <img src="./images/slider4.png" class="flex-shrink-0">
+                        <img src="./images/slider5.png" class="flex-shrink-0">
+                    </div>
+                </div>
+        </section>
+
+
+
+        
+    
+    <footer class="flex  items-center gap-[140px] h-[25vh] bg-cards mt-10">
+        <div class="flex text-xs font-display gap-6 ml-8">
+            <p>
+                Terms  of service 
+            </p>
+            <p>
+                Terms of service
+            </p>
+            <p>
+                Terms of service
+            </p>
+        </div>
+        <div class="flex justify-center items-center gap-4 mL-4 mb-4 text-2xl">
+           <i class="fa-brands fa-github"></i>
+            <i class="fa-solid fa-envelope"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-x-twitter"></i>
+        </div>
+        <div class="flex items-center justify-end gap-3">
+            <input type="text" placeholder="Contant Us" class="rounded-lg">
+            <button class="bg-btn hover:bg-purple-400 page-btn h-10 w-10 rounded-lg">Send</button>
+        </div>
+    </footer>
+
+
+    </main>
+
+    <script src="/script.js"></script>
+</body>
+</html>

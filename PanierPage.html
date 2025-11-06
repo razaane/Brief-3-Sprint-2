@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DigitalRami - Panier</title>
 
-  <!-- Tailwind + FontAwesome -->
+  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
     integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 
-  <!-- Fonts -->
+  
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
@@ -38,13 +38,13 @@
 </head>
 <body class="bg-backroung text-white font-[display]">
 
-  <!-- HEADER -->
+  
   <header class="flex items-center justify-between bg-cards h-20 px-6 sticky top-0 z-50">
     <div class="text-xl font-bold font-display tracking-normal">
       <a href="HomePage.html">DIGITALRAMI</a>
     </div>
 
-    <!-- Burger button for mobile -->
+    
     <button id="menu-btn" class="text-white text-2xl md:hidden">
       <i class="fa-solid fa-bars"></i>
     </button>
@@ -65,24 +65,24 @@
     </nav>
   </header>
 
-  <!-- MAIN -->
+  
   <main class="px-4 md:px-20 mt-8">
     <h1 class="text-center text-4xl font-bold font-display">Votre Panier</h1>
     <p class="text-center mt-4 text-sm font-display">Voici les cartes que vous avez ajoutées</p>
 
-    <!-- CART CARDS -->
+    
     <section class="mt-8">
       <div id="cartContainer" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-center">
-        <!-- Cards injected by JS -->
+        
       </div>
     </section>
 
-    <!-- TOTAL -->
+    
     <div id="cartTotal" class="text-center md:text-right text-white text-xl font-bold mt-8">
     </div>
   </main>
 
-  <!-- FOOTER -->
+  
   <footer class="flex flex-col md:flex-row justify-between items-center gap-6 md:gap-[140px] bg-cards p-6 mt-20">
     <div class="flex flex-wrap gap-6 text-xs font-display">
       <p>Terms of service</p>
@@ -103,9 +103,9 @@
     </div>
   </footer>
 
-  <!-- JS -->
+  
   <script>
-    // Mobile menu toggle
+    
     document.addEventListener("DOMContentLoaded", () => {
       const btn = document.getElementById("menu-btn");
       const menu = document.getElementById("menu");

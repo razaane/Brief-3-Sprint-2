@@ -1,5 +1,5 @@
 
-    // Mobile menu toggle
+    
     document.addEventListener("DOMContentLoaded", () => {
       const btn = document.getElementById("menu-btn");
       const menu = document.getElementById("menu");
@@ -8,7 +8,6 @@
       });
     });
 
-    // ================= Card Script =================
     const cards = [
       { id: 1, name: "Sentinelle Cybernétique", description: "Une défenseuse avec le feux de tech.", img: "./images/card11.png", price: 25.50 },
       { id: 2, name: "Void Witch", description: "Une créature de pure énergie.", img: "./images/card2.png", price: 25.50 },
@@ -52,7 +51,7 @@
           </div>
         `;
 
-        // Favorite button
+        
         const favBtn = cardDiv.querySelector(".fav-btn");
         favBtn.addEventListener("click", () => {
           if (!favorites.some(f => f.id === c.id)) {
@@ -64,7 +63,7 @@
           }
         });
 
-        // Cart button
+        
         const cartBtn = cardDiv.querySelector(".add-cart-btn");
         cartBtn.addEventListener("click", () => {
           const existing = cart.find(item => item.id === c.id);

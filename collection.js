@@ -1,10 +1,7 @@
-// collection.js
 const collectionContainer = document.getElementById("collectionContainer");
 
-// Get collection from localStorage
 let collection = JSON.parse(localStorage.getItem("collection")) || [];
 
-// Render collection cards
 function renderCollection() {
     collectionContainer.innerHTML = "";
 
@@ -33,5 +30,4 @@ function renderCollection() {
     });
 }
 
-// Initial render
 renderCollection();

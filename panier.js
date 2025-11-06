@@ -1,14 +1,14 @@
-// Get cart and collection from localStorage
+
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 let collection = JSON.parse(localStorage.getItem("collection")) || [];
 
 const container = document.getElementById("cartContainer");
 const totalDiv = document.getElementById("cartTotal");
 
-// Function to render cart
+
 function renderCart() {
     container.innerHTML = "";
-    if(cart.length === 0){
+    if (cart.length === 0) {
         container.innerHTML = `<p class="col-span-full text-center text-white text-lg">Votre panier est vide.</p>`;
         totalDiv.textContent = "";
         return;
@@ -25,12 +25,12 @@ function renderCart() {
             <h3 class="text-lg font-bold mb-1">${item.name}</h3>
             <p class="mb-2">Prix: ${item.price} €</p>
             <p class="mb-2">Quantité: ${item.quantity}</p>
-            <div class="flex justify-center gap-2">
-                <button class="bg-green-600 hover:bg-green-500 px-3 py-1 rounded buy-btn" data-id="${item.id}">
-                    Acheter
-                </button>
-                <button class="bg-red-600 hover:bg-red-500 px-3 py-1 rounded remove-btn" data-id="${item.id}">
+            <div class="flex justify-between gap-2">
+                <button class="delete-btn bg-red-600 hover:bg-red-500 px-3 py-1 rounded" data-id="${item.id}">
                     Supprimer
+                </button>
+                <button class="buy-btn bg-green-600 hover:bg-green-500 px-3 py-1 rounded" data-id="${item.id}">
+                    Acheter
                 </button>
             </div>
         `;
@@ -41,46 +41,49 @@ function renderCart() {
 
     totalDiv.textContent = `Total: ${total.toFixed(2)} €`;
 
-    // Attach remove event
-    const deleteButtons = container.querySelectorAll(".remove-btn");
-    deleteButtons.forEach(btn => {
+    
+    document.querySelectorAll(".delete-btn").forEach(btn => {
         btn.addEventListener("click", () => {
-            const id = parseInt(btn.getAttribute("data-id"));
+            const id = parseInt(btn.dataset.id);
             removeFromCart(id);
         });
     });
 
-    // Attach buy event
-    const buyButtons = container.querySelectorAll(".buy-btn");
-    buyButtons.forEach(btn => {
+    
+    document.querySelectorAll(".buy-btn").forEach(btn => {
         btn.addEventListener("click", () => {
-            const id = parseInt(btn.getAttribute("data-id"));
-            buyCard(id);
+            const id = parseInt(btn.dataset.id);
+            buyItem(id);
         });
     });
 }
 
-// Function to remove item from cart
-function removeFromCart(id){
+
+function removeFromCart(id) {
     cart = cart.filter(item => item.id !== id);
     localStorage.setItem("cart", JSON.stringify(cart));
     renderCart();
 }
 
-// Function to buy a card
-function buyCard(id){
-    const item = cart.find(c => c.id === id);
-    if(!item) return;
 
-    // Add to collection
+function buyItem(id) {
+    const index = cart.findIndex(item => item.id === id);
+    if (index === -1) return;
+
+    const item = cart[index];
+
+    
     collection.push(item);
     localStorage.setItem("collection", JSON.stringify(collection));
 
-    // Remove from cart
-    removeFromCart(id);
+    
+    cart.splice(index, 1);
+    localStorage.setItem("cart", JSON.stringify(cart));
 
-    alert(`${item.name} a été ajouté à votre collection !`);
+    alert(`✅ Vous avez acheté ${item.name} !`);
+
+    renderCart();
 }
 
-// Initial render
+
 renderCart();

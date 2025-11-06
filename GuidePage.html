@@ -52,6 +52,23 @@
             },
         }
     </script>
+    <style>
+        .hidden {
+            display: none;
+        }
+
+        input[type="checkbox"]:checked~.question .plus {
+            display: none;
+        }
+
+        input[type="checkbox"]:checked~.question .minus {
+            display: inline;
+        }
+
+        input[type="checkbox"]:checked~.answer {
+            display: block;
+        }
+    </style>
 </head>
 
 <body class="bg-backroung text-white font-[display]">
@@ -96,8 +113,8 @@
         <h1 class="font-display font-bold text-center text-2xl mt-14">
             Core Game Concepts
         </h1>
-        <div class="flex gap-10 justify-center mt-8">
-            <div class="bg-cards w-[20vw] h-[18vh] content-center rounded-lg">
+        <div class="flex gap-2 justify-center mt-8">
+            <div class="bg-cards w-[30vw] h-[30vh] content-center rounded-lg">
                 <i class="fa-solid fa-medal ml-6 text-btn text-2xl  ml-6 mb-4"></i>
                 <div class="ml-6">
                     <h6 class="font-bold font-display ">
@@ -108,7 +125,7 @@
                     </p>
                 </div>
             </div>
-            <div class="bg-cards w-[20vw] h-[18vh] content-center rounded-lg">
+            <div class="bg-cards w-[30vw] h-[30vh] content-center rounded-lg">
                 <i class=" text-btn fa-solid fa-bolt text-2xl  ml-6 mb-4"></i>
                 <div class="ml-6">
                     <h6 class="font-bold font-display ">
@@ -119,7 +136,7 @@
                     </p>
                 </div>
             </div>
-            <div class="bg-cards w-[20vw] h-[18vh] content-center rounded-lg">
+            <div class="bg-cards w-[30vw] h-[30vh] content-center rounded-lg">
                 <i class="fa-solid fa-spinner text-btn ml-6 text-2xl  ml-6 mb-4"></i>
                 <div class="ml-6">
                     <h6 class="font-bold font-display ">
@@ -136,61 +153,106 @@
         <h1 class="font-display font-bold text-center text-2xl mt-8">
             Cards Rarity Levels
         </h1>
-        <div class="flex gap-40 justify-center mt-10">
-            <div class="bg-commun w-[12vw] h-[25vh] rounded-xl content-center">
-                <i class="fa-regular fa-bookmark ml-24 text-3xl text-commun-logo mb-4 "></i>
-                <div class="">
-                    <h6 class="font-bold font-display text-center">
-                        Commune
-                    </h6>
-                    <p class="font-tet text-tete text-center">
-                        Core crds for your<br>collection,forming the <br>backbone of any deck.
-                    </p>
-                </div>
+        <div class="flex gap-6 justify-center mt-10">
+            <div class="bg-commun w-[20vw] h-[40vh] rounded-xl content-center">
+                <i class="fa-regular fa-bookmark ml-28 text-3xl text-commun-logo mb-4 "></i>
+                <h6 class="font-bold font-display text-center">
+                    Commune
+                </h6>
+                <p class="font-tet text-tete text-center">
+                    Core crds for your<br>collection,forming the <br>backbone of any deck.
+                </p>
             </div>
-            <div class="bg-rare w-[12vw] h-[25vh] rounded-lg content-center">
-                <i class="fa-solid fa-shield-halved ml-24 text-3xl text-rare-logo mb-4 "></i>
-                <div class="">
-                    <h6 class="font-bold font-display text-center">
-                        Rare
-                    </h6>
-                    <p class="font-tet text-tete text-center">
-                        Powerful cards with<br>unique abilities that can <br>turn the tide of battle.
-                    </p>
-                </div>
+            <div class="bg-rare w-[20vw] h-[40vh]  rounded-lg content-center">
+                <i class="fa-solid fa-shield-halved ml-28 text-3xl text-rare-logo mb-4 "></i>
+                <h6 class="font-bold font-display text-center">
+                    Rare
+                </h6>
+                <p class="font-tet text-tete text-center">
+                    Powerful cards with<br>unique abilities that can <br>turn the tide of battle.
+                </p>
             </div>
-            <div class="bg-epic w-[12vw] h-[25vh] rounded-lg content-center">
-                <i class="fa-solid fa-shield-halved ml-24 text-3xl text-epic-logo mb-4 "></i>
-                <div class="">
-                    <h6 class="font-bold font-display text-center">
-                        Epique
-                    </h6>
-                    <p class="font-tet text-tete text-center">
-                        Game-changing cards<br>with copmlex<br>machanics for stategic <br>plays.
-                    </p>
-                </div>
+            <div class="bg-epic w-[20vw] h-[40vh] rounded-lg content-center">
+                <i class="fa-solid fa-shield-halved ml-28 text-3xl text-epic-logo mb-4 "></i>
+                <h6 class="font-bold font-display text-center">
+                    Epique
+                </h6>
+                <p class="font-tet text-tete text-center">
+                    Game-changing cards<br>with copmlex<br>machanics for stategic <br>plays.
+                </p>
             </div>
-            <div class="bg-legendary w-[12vw] h-[25vh] rounded-lg content-center">
-                <i class="fa-regular fa-gem ml-24 text-3xl text-legendary-logo mb-4"></i>
-                <div class="">
-                    <h6 class="font-bold font-display text-center">
-                        Legendaire
-                    </h6>
-                    <p class="font-tet text-tete text-center">
-                        The most coverted<br>cards,possessing <br>unparalleled power and <br>influence .
-                    </p>
-                </div>
+            <div class="bg-legendary w-[20vw] h-[40vh] rounded-lg content-center">
+                <i class="fa-regular fa-gem ml-28 text-3xl text-legendary-logo mb-4"></i>
+                <h6 class="font-bold font-display text-center">
+                    Legendaire
+                </h6>
+                <p class="font-tet text-tete text-center">
+                    The most coverted<br>cards,possessing <br>unparalleled power and <br>influence .
+                </p>
             </div>
     </section>
-    <section class="mt-14">
-        <div>
-            <h1 class="text-2xl text-center font-display font-bold">
-                Frequently Asked Questions
-            </h1>
+        <section class="mt-14">
+    <h1 class="text-2xl text-center font-display font-bold">
+        Frequently Asked Questions
+    </h1>
 
+    <div class="flex flex-col items-center mt-8">
+
+        <!-- FAQ 1 -->
+        <div class="faq-item w-[50vw] bg-cards mb-4 rounded-lg">
+            <input type="checkbox" id="toggle1" class="hidden">
+            <label for="toggle1"
+                class="flex justify-between items-center bg-cards p-4 cursor-pointer rounded-lg">
+                <span>How do I get new cards?</span>
+                <span class="plus text-xl font-bold">+</span>
+                <span class="minus text-xl font-bold hidden">-</span>
+            </label>
+            <div class="answer bg-cards p-4 mb-6 rounded hidden">
+                <div class="flex justify-between items-center">
+                    <span>New cards can be acquired through card packs earned by playing, doing quests, or buying from the market.</span>
+                    <label for="toggle1" class="text-xl font-bold cursor-pointer">-</label>
+                </div>
+            </div>
         </div>
-    </section>
 
+        <!-- FAQ 2 -->
+        <div class="faq-item w-[50vw] bg-cards mb-4 rounded-lg">
+            <input type="checkbox" id="toggle2" class="hidden">
+            <label for="toggle2"
+                class="flex justify-between items-center bg-cards p-4 cursor-pointer rounded-lg">
+                <span>How rare are Legendary cards?</span>
+                <span class="plus text-xl font-bold">+</span>
+                <span class="minus text-xl font-bold hidden">-</span>
+            </label>
+            <div class="answer bg-cards p-4 mb-6 rounded hidden">
+                <div class="flex justify-between items-center">
+                    <span>Legendary cards are extremely rare and can only be found in high-level packs or special events.</span>
+                    <label for="toggle2" class="text-xl font-bold cursor-pointer">-</label>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="faq-item w-[50vw] bg-cards mb-4 rounded-lg">
+            <input type="checkbox" id="toggle3" class="hidden">
+            <label for="toggle3"
+                class="flex justify-between items-center bg-cards p-4 cursor-pointer rounded-lg">
+                <span>Can I trade cards with other players?</span>
+                <span class="plus text-xl font-bold">+</span>
+                <span class="minus text-xl font-bold hidden">-</span>
+            </label>
+            <div class="answer bg-cards p-4 mb-6 rounded hidden">
+                <div class="flex justify-between items-center">
+                    <span>Yes, players can safely trade cards through the official trading system inside the game.</span>
+                    <label for="toggle3" class="text-xl font-bold cursor-pointer">-</label>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+   
     <footer class="flex  items-center gap-[140px] h-[25vh] bg-cards ">
         <div class="flex text-xs font-display gap-6 ml-8">
             <p>

@@ -1,20 +1,20 @@
-// Example: cards array (same as your Market)
+
 const cards = [
     {id:1, name:"Sentinelle Cybernétique", description:"Une défenseuse avec le feux de tech.", img:"./images/card11.png", price:25.50, rarety:"épic"},
     {id:2, name:"Void Witch", description:"Une créature de pure énergie.", img:"./images/card2.png", price:25.50, rarety:"Commun"},
     {id:3, name:"Spectre de Néon", description:"Une entitée insaisissable quihante le réseau.", img:"./images/card3.png", price:25.50, rarety:"Lengendary"},
-    // ... add all cards
+    
 ];
 
-// Example: simulate cards the user owns
-const userCollection = [1, 3, 5, 6, 12]; // IDs of owned cards
+
+const userCollection = [1, 3, 5, 6, 12]; 
 
 const container = document.getElementById("cardsContainerCollection");
 const cardsPerPage = 6;
 let currentPage = 1;
 const totalPages = Math.ceil(userCollection.length / cardsPerPage);
 
-// Render user's collection
+
 function renderCollection(page){
     container.innerHTML = "";
     const start = (page - 1) * cardsPerPage;
@@ -51,7 +51,7 @@ function renderCollection(page){
     updatePagination();
 }
 
-// Pagination logic
+
 const prevBtn = document.getElementById("prevBtnCollection");
 const nextBtn = document.getElementById("nextBtnCollection");
 const pageNumbers = document.getElementById("pageNumbersCollection");
@@ -83,5 +83,5 @@ nextBtn.addEventListener("click", () => {
     }
 });
 
-// Initial render
+
 renderCollection(currentPage);

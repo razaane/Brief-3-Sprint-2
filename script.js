@@ -6,21 +6,21 @@ const slider = document.getElementById("slider");
 const slides = Array.from(slider.children);
 const slideCount = slides.length;
 
-// Clone slides to make infinite effect
+
 slides.forEach(slide => {
     const clone = slide.cloneNode(true);
     slider.appendChild(clone);
 });
 
 let currentIndex = 0;
-const slideWidth = slides[0].offsetWidth + 40; // image width + gap-10 ~ 40px
-const speed = 2; // pixels per frame
+const slideWidth = slides[0].offsetWidth + 40; 
+const speed = 2; 
 
 function animateSlider() {
     currentIndex += speed;
 
     if (currentIndex >= slideWidth * slideCount) {
-        currentIndex = 0; // loop back
+        currentIndex = 0;
     }
 
     slider.style.transform = `translateX(-${currentIndex}px)`;
@@ -29,27 +29,27 @@ function animateSlider() {
 
 animateSlider();
 
-// Optional: make it responsive
+
 window.addEventListener("resize", () => {
-    // recalc slide width
+    
     const newWidth = slides[0].offsetWidth + 40;
     currentIndex = 0;
     slider.style.transform = `translateX(0px)`;
 });
 
 
-// --- DOM elements ---
+
 const container = document.getElementById("cardsContainer");
 const prevBtn = document.getElementById("prevBtn");
 const nextBtn = document.getElementById("nextBtn");
 const pageNumbersDiv = document.getElementById("pageNumbers");
 
-// --- Variables ---
+
 const cardsPerPage = 6;
 let currentPage = 1;
 const totalPages = Math.ceil(cards.length / cardsPerPage);
 
-// --- Display cards for a given page ---
+
 function displayCards(page) {
     container.innerHTML = "";
     const start = (page - 1) * cardsPerPage;
@@ -83,12 +83,12 @@ function displayCards(page) {
     updatePaginationButtons();
 }
 
-// --- Update pagination buttons ---
+
 function updatePaginationButtons() {
-    // Clear page numbers
+    
     pageNumbersDiv.innerHTML = "";
 
-    // Add page number buttons
+    
     for (let i = 1; i <= totalPages; i++) {
         const btn = document.createElement("button");
         btn.textContent = i;
@@ -100,12 +100,12 @@ function updatePaginationButtons() {
         pageNumbersDiv.appendChild(btn);
     }
 
-    // Disable prev/next buttons if at start/end
+    
     prevBtn.disabled = currentPage === 1;
     nextBtn.disabled = currentPage === totalPages;
 }
 
-// --- Event listeners ---
+
 prevBtn.addEventListener("click", () => {
     if (currentPage > 1) {
         currentPage--;
@@ -120,7 +120,7 @@ nextBtn.addEventListener("click", () => {
     }
 });
 
-// --- Initial display ---
+
 displayCards(currentPage);
 
 

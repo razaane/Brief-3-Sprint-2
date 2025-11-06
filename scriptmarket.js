@@ -12,11 +12,11 @@ const cardsPerPage = 6;
 let currentPage = 1;
 const totalPages = Math.ceil(cards.length / cardsPerPage);
 
-// Favorites and Cart from localStorage
+
 let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-// Render cards
+
 function renderCards(page) {
     container.innerHTML = "";
     const start = (page - 1) * cardsPerPage;
@@ -47,7 +47,7 @@ function renderCards(page) {
             </div>
         `;
 
-        // Add to Favorites
+        
         const favBtn = cardDiv.querySelector(".fav-btn");
         favBtn.addEventListener("click", () => {
             if (!favorites.some(f => f.id === c.id)) {
@@ -59,7 +59,7 @@ function renderCards(page) {
             }
         });
 
-        // Add to Cart
+        
         const cartBtn = cardDiv.querySelector(".add-cart-btn");
         cartBtn.addEventListener("click", () => {
             const existing = cart.find(item => item.id === c.id);
@@ -78,7 +78,7 @@ function renderCards(page) {
     updatePagination();
 }
 
-// Pagination
+
 const prevBtn = document.getElementById("prevBtn");
 const nextBtn = document.getElementById("nextBtn");
 const pageNumbers = document.getElementById("pageNumbers");
@@ -110,5 +110,7 @@ nextBtn.addEventListener("click", () => {
     }
 });
 
-// Initial render
+
 renderCards(currentPage);
+
+

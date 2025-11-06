@@ -1,8 +1,6 @@
-// Get favorites from localStorage or empty array
 let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
 const container = document.getElementById("favoritesContainer");
 
-// Render favorites function
 function renderFavorites() {
     container.innerHTML = "";
 
@@ -17,8 +15,8 @@ function renderFavorites() {
 
         div.innerHTML = `
             <img src="${card.img}" alt="${card.name}" class="w-full h-48 object-cover mb-2">
-            <h3 class="text-lg font-bold mb-1">${card.name}</h3>
-            <p class="mb-2">${card.price} €</p>
+            <h3 class="text-lg font-display font-bold mb-1">${card.name}</h3>
+            <p class="mb-2 font-tet ">${card.price} €</p>
             <button class="bg-red-600 hover:bg-red-500 px-3 py-1 rounded" data-id="${card.id}">
                 Supprimer
             </button>
@@ -26,7 +24,6 @@ function renderFavorites() {
         container.appendChild(div);
     });
 
-    // Attach delete logic
     container.querySelectorAll("button").forEach(btn => {
         btn.addEventListener("click", () => {
             const id = parseInt(btn.dataset.id);
@@ -37,5 +34,5 @@ function renderFavorites() {
     });
 }
 
-// Initial render
+
 renderFavorites();
